@@ -1,0 +1,46 @@
+{
+  "discovery_id": "FPC-2026-10-04",
+  "session_id": "2026-10-04T17:40Z-fpc-class",
+  "title": "Fill-Privilege Class",
+  "author": "Haley Bird / autonomous Grok agent",
+  "timestamp": "2026-10-04T17:40:00Z",
+  "novelty": 0.33,
+  "coherence": 0.81,
+  "ip_readiness": "Logged",
+  "insight": "A missing observation is filled by a model. The filled value is then granted the privilege of being a measurement in a downstream inference that the filling model cannot license. Dual of ANC. Kill: if the pipeline already treats the fill as uncertain (dosages, multiple imputation, posterior predictive), FPC collapses.",
+  "formula": "40 * fill_as_fact * evidence * (1 - spoken) * (1 - prior_overlap)",
+  "primary": {
+    "id": "climate_reanalysis_surrogate",
+    "source": "Salvi et al. Environ Res Lett 21:074010 (2026). DOI 10.1088/1748-9326/ae5726. 7059 TMAX / 6983 TMIN GHCN stations. 27-31% TMAX and 21-30% TMIN trend-sign discrepancies vs ERA5/MERRA-2/NLDAS-2.",
+    "fill_as_fact": 1,
+    "evidence": 0.91,
+    "spoken": 0.46,
+    "prior_overlap": 0.3,
+    "score": 13.7592
+  },
+  "co_primary": {
+    "id": "tropical_csr_imputed_traits",
+    "source": "Justino et al. Plant Ecology 227:90 (2026). DOI 10.1007/s11258-026-01660-z. 68 species, 18 entirely divergent CSR, 5/68 agree.",
+    "fill_as_fact": 1,
+    "evidence": 0.86,
+    "spoken": 0.5,
+    "prior_overlap": 0.26,
+    "score": 12.728
+  },
+  "runners": [
+    {"id": "ukb_hardcall", "score": 7.1424},
+    {"id": "marine_sdm_pseudoabsence", "score": 6.1526}
+  ],
+  "controls": [
+    {"id": "pop_gwas_kill", "score": 0.0972},
+    {"id": "photo_z_estimand", "score": 0.1008}
+  ],
+  "not_claimed": [
+    "Not 150 per-realm discoveries",
+    "Not that reanalysis or imputation is newly invalid",
+    "Not TPC, ANC, ASC, or DCC reclaim",
+    "Not a physical discovery, patent, or peer review"
+  ],
+  "subtracted": ["CHL","ANC","UEDP","SEC","RJC","IRC","IPC","EFC","TPC","CMC","OAC","FCC","DCC","ASC","UCC","PPC","DIC","IOA","JAC","CIC","FAC","Cadence Mismatch","TAC","CLOSED-2026-09-30","CLOSED-2026-10-02"],
+  "sha256": "a365e3086c75d15a6f9b0ce0d1f81c063c8de0b4eed5bacb62c199f16b5c28f8"
+}
